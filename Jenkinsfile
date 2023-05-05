@@ -4,11 +4,12 @@ pipeline {
     
    
     stages {
-        stage('Build') {
-       
-            sh 'bash scripts/build.sh'
-         
-        
-    
+       stage('Build') {
+            steps{
+                echo 'This is a Build step'
+                // 在有Jenkinsfile同一个目录下（项目的根目录下）
+                sh 'bash scripts/build.sh'
+            }
         }
+        
 }}
